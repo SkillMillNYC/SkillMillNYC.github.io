@@ -81,7 +81,7 @@ for(var i =0; i<numMat; i++){
     //Controles what happens when a material is selected
     para.id = json[i].Materials
     para.onclick = function(e) {
-	   popMat(e.path[0].id)
+	   popMatThickness(e.path[0].id)
     };
     var node = document.createTextNode(json[i].Materials);
     para.appendChild(node);
@@ -93,7 +93,15 @@ for(var i =0; i<numMat; i++){
 });
 
 //populate Material Thickness
-	function popMat(material){
+	function popMatThickness(material){
+		$.getJSON("convertcsv.json", function(json) {
+			var numMat = Object.keys(json).length
+			for(var i =0; i<numMat; i++){
+				if(json[i].Materials.equals(material)){
+					console.log(json[i])
+					break;
+				   }
+    			};
 		console.log(material);
 	}
 });
