@@ -80,7 +80,9 @@ for(var i =0; i<numMat; i++){
     para.className = "column"	
     //Controles what happens when a material is selected
     para.id = json[i].Materials
-    para.onclick = function(e) {console.log(e)};
+    para.onclick = function(e) {
+	   popMat(e.path[0].id)
+    };
     var node = document.createTextNode(json[i].Materials);
     para.appendChild(node);
     element.appendChild(para);
@@ -90,7 +92,10 @@ for(var i =0; i<numMat; i++){
 
 });
 
-
+//populate Material Thickness
+	function popMat(material){
+		console.log(material);
+	}
 });
 	
 
