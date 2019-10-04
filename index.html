@@ -85,7 +85,7 @@ $.getJSON("convertcsv.json", function(json) {
     var numMat = Object.keys(json).length
     var para = document.createElement("div");
 	
-    var node = document.createTextNode(json[0][0]);
+    var node = document.createTextNode(json[0].Materials:);
     para.appendChild(node);
 	
     var element = document.getElementById("options");
