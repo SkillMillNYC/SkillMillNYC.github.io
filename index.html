@@ -83,17 +83,18 @@ $(document).ready(function () {
 $.getJSON("convertcsv.json", function(json) {
 //Loads all the Materials
 var numMat = Object.keys(json).length
+var element = document.getElementById("options");
+    
 for(var i =0; i<numMat; i++){
     var para = document.createElement("div");
-    para.className = "column"	
-    console.log(json[i])			
-    var node = document.createTextNode(json[0].Materials);
+    para.className = "column"				
+    var node = document.createTextNode(json[i].Materials);
     para.appendChild(node);
+    element.appendChild(para);
 }
 
 	
-    var element = document.getElementById("options");
-    element.appendChild(para);
+
 });
 	
 });
