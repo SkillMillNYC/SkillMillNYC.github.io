@@ -81,12 +81,12 @@
 	
 $(document).ready(function () {
 $.getJSON("convertcsv.json", function(json) {
-    console.log(Object.keys(json).length;); // this will show the info it in firebug console
+    console.log(Object.keys(object1).length);
 });
 	var para = document.createElement("p");
 	var node = document.createTextNode("This is new.");
 	para.appendChild(node);
-
+	
 	var element = document.getElementById("options");
 	element.appendChild(para);
 });
