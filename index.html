@@ -78,7 +78,8 @@ var element = document.getElementById("options");
 for(var i =0; i<numMat; i++){
     var para = document.createElement("div");
     para.className = "column"	
-    //Controles what happens when a material is selected	
+    //Controles what happens when a material is selected
+    para.id = json[i].Materials
     para.onclick = function(e) {console.log(e)};
     var node = document.createTextNode(json[i].Materials);
     para.appendChild(node);
