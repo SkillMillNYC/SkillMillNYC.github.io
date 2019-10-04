@@ -58,7 +58,7 @@
 		</div>
 	</div>
 
-	<div id="mainContainer" style="background-color:rgba(225,223,230,1);">
+	<div id="Thickness" style="background-color:rgba(225,223,230,1);">
 		<div id="stepOne" style="background-color:rgba(245,252,251,1); border-radius: 5px; margin: 10px;">
 			<h1>Choose Needed Material Size</h1>
 
@@ -94,11 +94,22 @@ for(var i =0; i<numMat; i++){
 
 //populate Material Thickness
 	function popMatThickness(material){
+		var element = document.getElementById("Thickness");
 		$.getJSON("convertcsv.json", function(json) {
 			var numMat = Object.keys(json).length
 			for(var i =0; i<numMat; i++){
 				if(json[i].Materials == material){
-					console.log(Object.keys(json[i].Thickness).length)
+					numThick = Object.keys(json[i].Thickness).length
+					for(var j =0; j<numThick; j++){
+						    var para = document.createElement("div");
+						    para.className = "column"	
+   						    //Controles what happens when a material is selected
+  						    para.id = json[i].Thickness[j]
+    						    para.onclick = function(e) {};
+						    var node = document.createTextNode(json[i].Thickness[j]);
+                                                    para.appendChild(node);
+                                                    element.appendChild(para);
+					}
 					break;
 				   }
     			}
