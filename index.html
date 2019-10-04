@@ -73,10 +73,15 @@ $.getJSON("convertcsv.json", function(json) {
 //Loads all the Materials
 var numMat = Object.keys(json).length
 var element = document.getElementById("options");
-    
+	
+
 for(var i =0; i<numMat; i++){
     var para = document.createElement("div");
-    para.className = "column"				
+    para.className = "column"	
+    //Controles what happens when a material is selected	
+    para.setAttribute("onclick", function(){
+	    consol.log("clicked");
+			});	
     var node = document.createTextNode(json[i].Materials);
     para.appendChild(node);
     element.appendChild(para);
@@ -85,8 +90,12 @@ for(var i =0; i<numMat; i++){
 	
 
 });
-	
+
+
 });
+	
+
+	
 </script>
 
 </html>
