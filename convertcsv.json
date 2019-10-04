@@ -2,11 +2,11 @@
  {
    "Materials": "Blatic Birch",
    "Type": "Wood",
-   "Thickness": "0.5"
+   "Thickness": ["0.5",".25",".118"]
  },
  {
    "Materials": "Acrylic ",
    "Type": "Plastic",
-   "Thickness": "0.5"
+   "Thickness": "Thickness": ["0.53",".253",".1183"]
  }
 ]
