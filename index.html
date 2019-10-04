@@ -97,7 +97,7 @@ for(var i =0; i<numMat; i++){
 		$.getJSON("convertcsv.json", function(json) {
 			var numMat = Object.keys(json).length
 			for(var i =0; i<numMat; i++){
-				if(json[i].Materials.equals(material)){
+				if(json[i].Materials == material){
 					console.log(json[i])
 					break;
 				   }
