@@ -81,12 +81,16 @@
 	
 $(document).ready(function () {
 $.getJSON("convertcsv.json", function(json) {
-//Loads all the Materials	
-    var numMat = Object.keys(json).length
+//Loads all the Materials
+var numMat = Object.keys(json).length
+for(var i =0; i<numMat; i++){
     var para = document.createElement("div");
-    console.log(json[0])			
+    para.className = "column"	
+    console.log(json[i])			
     var node = document.createTextNode(json[0].Materials);
     para.appendChild(node);
+}
+
 	
     var element = document.getElementById("options");
     element.appendChild(para);
