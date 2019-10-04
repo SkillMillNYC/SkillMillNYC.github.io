@@ -81,14 +81,17 @@
 	
 $(document).ready(function () {
 $.getJSON("convertcsv.json", function(json) {
-    console.log(Object.keys(json).length);
-});
-	var para = document.createElement("p");
-	var node = document.createTextNode("This is new.");
-	para.appendChild(node);
+//Loads all the Materials	
+    var numMat = Object.keys(json).length
+    var para = document.createElement("div");
 	
-	var element = document.getElementById("options");
-	element.appendChild(para);
+    var node = document.createTextNode(json[0][0]);
+    para.appendChild(node);
+	
+    var element = document.getElementById("options");
+    element.appendChild(para);
+});
+	
 });
 </script>
 
