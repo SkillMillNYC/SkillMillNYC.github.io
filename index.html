@@ -79,7 +79,7 @@ for(var i =0; i<numMat; i++){
     var para = document.createElement("div");
     para.className = "column"	
     //Controles what happens when a material is selected	
-    para.setAttribute("onclick", function(){
+    para.onclick = function () {
 	    consol.log("clicked");
 			});	
     var node = document.createTextNode(json[i].Materials);
